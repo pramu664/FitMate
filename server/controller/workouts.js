@@ -24,11 +24,11 @@ export const getWorkout = async (req, res) => {
 // Create a workout
 export const createWorkout = async (req, res) => {
 
-    const { title, reps, body } = req.body;
+    const { title, reps, load } = req.body;
 
     try {
 
-        const new_workout  = await Workout.create({title , reps, body});
+        const new_workout  = await Workout.create({title , reps, load});
         res.status(200).json(new_workout);
 
     } catch (error) {
@@ -38,3 +38,19 @@ export const createWorkout = async (req, res) => {
     }
 
 }
+
+// delete a workout
+export const deleteWorkout = async (req, res) => {
+
+    // TOOD
+
+}
+
+
+// Update a workout
+export const updateWorkout = async (req, res) => {
+
+    // TODO
+
+}
+
