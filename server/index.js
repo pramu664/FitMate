@@ -16,7 +16,6 @@ app.use(bodyParser.urlencoded({limit: "30mb", extended: true}));
 app.use(cors());
 // app.use(express.json());
 app.use((req, res, next) => {
-    console.log("Hey, I am global middleware.");
     console.log("Path:",req["path"], "Method:",req["method"]);
     next();
 })

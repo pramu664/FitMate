@@ -1,18 +1,14 @@
 import express from 'express';
 
 import Workout from '../models/workout.js';
+import { getWorkouts, getWorkout } from "../controller/workouts.js";
 
 const router = express.Router();
 
-// Get all workouts
-router.get("/", (req, res) => {
-    res.json({"message": "Get all workouts(TODO)"});
-});
+// url patterns
+router.get("/", getWorkouts);
+router.get("/:id", getWorkout);
 
-// Get a single workout
-router.get("/:id", (req, res) => {
-    res.json({"message": "Get a single workout"});
-});
 
 // Post a new workout
 router.post("/", async (req, res) => {
