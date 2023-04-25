@@ -1,11 +1,21 @@
-import React from 'react';
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-const App = () => {
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+
+function App () {
+
     return (
-        <div>
-            <h1>Welcome to FitMate</h1>
-            <p>A web app that helps users track their fitness goals and progress. Users can log their workouts, track their nutrition,
-            and set reminders for their fitness routines.</p>
+        <div className="App">
+            <BrowserRouter>
+                <Navbar /> 
+                <div className="pages">
+                    <Routes>
+                        <Route path="/" element={<Home />}></Route>
+                    </Routes>
+                </div>
+            </BrowserRouter>
         </div>
     )
 }
